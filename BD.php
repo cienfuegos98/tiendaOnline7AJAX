@@ -15,7 +15,7 @@ class BD {
     }
 
 //Creamos el constructor con los atributos de la base de datos
-    public function __construct($host = "172.17.0.2", $user = "root", $pass = "root", $bd = null) {
+    public function __construct($host = "localhost", $user = "root", $pass = "root", $bd = "dwes") {
         $this->host = $host;
         $this->user = $user;
         $this->pass = $pass;
@@ -47,7 +47,7 @@ class BD {
             $this->con = $this->conexion();
         }
         $resultado = $this->con->query($c);
-        while ($fila = $resultado->fetch(PDO::FETCH_NUM)) {
+        while ($fila = $resultado->fetch(PDO::FETCH_ASSOC)) {
             $filas[] = $fila;
         }
         return $filas;
@@ -73,14 +73,14 @@ class BD {
         }
     }
 
-    public function compruebaLogin($nombre, $pass) {
-        $c = "SELECT * FROM usuario";
-        $datos = $this->selection($c);
-        if (($datos[0] === $nombre) && ($datos[1] === $pass)) {
-            return true;
-        } else {
-            return false;
+    public function compruebaUsuario($nombre, $pass) {
+        $datos = $this->selection("SELECT * FROM usuario");
+        foreach ($datos as $dato) {
+            if (($dato['name'] === $nombre) && ($dato['pass'] === $pass)) {
+                return true;
+            }
         }
+        return false;
     }
 
 }

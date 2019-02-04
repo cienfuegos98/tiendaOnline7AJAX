@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-02-04 11:58:30
-  from '/var/www/tiendaOnline/template/login.tpl' */
+/* Smarty version 3.1.33, created on 2019-02-05 00:07:09
+  from 'C:\xampp\htdocs\tiendaOnline2\template\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5c581ad6c60fc6_58843795',
+  'unifunc' => 'content_5c58c59d1ccfa1_81963599',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'bf301362d50ff160d817209e98c006fcd7a63999' => 
+    '48dec48811b49136ce4f33701be21f43a77e5fd0' => 
     array (
-      0 => '/var/www/tiendaOnline/template/login.tpl',
-      1 => 1549277910,
+      0 => 'C:\\xampp\\htdocs\\tiendaOnline2\\template\\login.tpl',
+      1 => 1549313108,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5c581ad6c60fc6_58843795 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c58c59d1ccfa1_81963599 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -37,11 +37,11 @@ function content_5c581ad6c60fc6_58843795 (Smarty_Internal_Template $_smarty_tpl)
 </span></div>
                     <div class="campo">
                         <label for="usuario">Usuario:</label><br>
-                        <input type="text" name="usuario" id="usuario" maxlength="50"><br>
+                        <input type="text" value="dwes" name="usuario" id="usuario" maxlength="50"><br>
                     </div>
                     <div class="campo">
                         <label for="password">Contraseña:</label><br>
-                        <input type="password" name="password" id="password" maxlength="50"><br>
+                        <input type="password" value="abc123." name="password" id="password" maxlength="50"><br>
                     </div>
 
                     <div class="campo">
