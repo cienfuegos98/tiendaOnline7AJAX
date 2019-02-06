@@ -5,18 +5,29 @@ require_once "Smarty.class.php";
 spl_autoload_register(function($nombre_clase) {
     include $nombre_clase . '.php';
 });
+$con = new BD();
+session_start();
 
-$lista = "holaa";
 $plantilla = new Smarty();
 $plantilla->template_dir = "./template";
 $plantilla->compile_dir = "./template_c";
-$con = new BD();
+
+
+if (isset($_SESSION['usuario']) && isset($_SESSION['pass'])) {
+    $_SESSION['usuario'] = $nombre;
+    $_SESSION['pass'] = $pass;
+} else {
+    $error = "Debes conectarte para entrar";
+    header("Location:login.php?error=$error");
+}
+
 $listado = obtenerListado($con);
-$plantilla->assign('error', $listado);
+$plantilla->assign('listado', $listado);
+$plantilla->display("sitio.tpl");
 
 function obtenerListado($con) {
     $listado = "";
-    $datos = $con->selection("SELECT * FROM productos");
+    $datos = $con->selection("SELECT * FROM producto");
     foreach ($datos as $dato) {
         $n_corto = $dato['nombre_corto'];
         $precio = $dato['PVP'];

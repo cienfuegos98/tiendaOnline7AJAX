@@ -9,10 +9,10 @@
             <div id="encabezado">
                 <h1>Listado de productos</h1>
             </div>
- 
             <div id="productos">
                 {$listado}
             </div>
+            
         </div>
     </body>
 </html>
