@@ -31,9 +31,9 @@ if (isset($_POST['enviar'])) {
         $plantilla->display("login.tpl");
     }
 } else {
-    $error = "";
-    if (isset($_GET['error'])) {
-        $plantilla->assign('error', $_GET['error']);
+    $error = $_GET['error'];
+    if (isset($error)) {
+        $plantilla->assign('error', $error);
     }
     $plantilla->assign('error', $error);
     $plantilla->display("login.tpl");

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-02-06 20:20:40
-  from 'C:\xampp\htdocs\tiendaOnline2\template\sitio.tpl' */
+/* Smarty version 3.1.33, created on 2019-02-07 11:57:49
+  from '/var/www/tiendaOnline2/template/sitio.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5c5b33883d90b2_47316724',
+  'unifunc' => 'content_5c5c0f2d80afc2_13943659',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '238fc61a8a7efca8d3e30013db34b0639b2bb4b6' => 
+    'c2348faafccee0c1c0a1dd84fc7f84fa90c270ab' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\tiendaOnline2\\template\\sitio.tpl',
-      1 => 1549480830,
+      0 => '/var/www/tiendaOnline2/template/sitio.tpl',
+      1 => 1549525192,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5c5b33883d90b2_47316724 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c5c0f2d80afc2_13943659 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -36,11 +36,7 @@ function content_5c5b33883d90b2_47316724 (Smarty_Internal_Template $_smarty_tpl)
                 <?php echo $_smarty_tpl->tpl_vars['listado']->value;?>
 
             </div>
-            <div id="pie">
-                <form action="logoff.php" method="post">
-                    <input type="submit" name="desconectar" value="Desconectar usuario dwes">
-                 </form>        
-            </div>
+            
         </div>
     </body>
 </html><?php }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-02-05 00:07:09
-  from 'C:\xampp\htdocs\tiendaOnline2\template\login.tpl' */
+/* Smarty version 3.1.33, created on 2019-02-07 09:00:42
+  from '/var/www/tiendaOnline2/template/login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5c58c59d1ccfa1_81963599',
+  'unifunc' => 'content_5c5be5aa0541c1_25124701',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '48dec48811b49136ce4f33701be21f43a77e5fd0' => 
+    '1b146465fbced44a3ca3bb508d08bc545d0f3f21' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\tiendaOnline2\\template\\login.tpl',
-      1 => 1549313108,
+      0 => '/var/www/tiendaOnline2/template/login.tpl',
+      1 => 1549525192,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5c58c59d1ccfa1_81963599 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c5be5aa0541c1_25124701 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">

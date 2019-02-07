@@ -14,8 +14,8 @@ $plantilla->compile_dir = "./template_c";
 
 
 if (isset($_SESSION['usuario']) && isset($_SESSION['pass'])) {
-    $_SESSION['usuario'] = $nombre;
-    $_SESSION['pass'] = $pass;
+    $nombre = $_SESSION['usuario'];
+    $pass = $_SESSION['pass'];
 } else {
     $error = "Debes conectarte para entrar";
     header("Location:login.php?error=$error");
