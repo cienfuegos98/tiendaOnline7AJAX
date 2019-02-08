@@ -20,6 +20,11 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['pass'])) {
     $error = "Debes conectarte para entrar";
     header("Location:login.php?error=$error");
 }
+if (isset($_POST['desconectar'])) {
+
+    $error = "Te has desconectado";
+    header("Location:login.php?error=$error");
+}
 
 $listado = obtenerListado($con);
 $plantilla->assign('listado', $listado);
@@ -32,8 +37,8 @@ function obtenerListado($con) {
         $n_corto = $dato['nombre_corto'];
         $precio = $dato['PVP'];
         $listado .= "<form action='sitio.php' method='post'>"
-                . "<input type='submit' value'Añadir' name='datos'>"
-                . $n_corto . $precio
+                . " <input type='submit' value'Añadir' name='datos'>"
+                . "  " . $n_corto . " - " . $precio
                 . "</form>";
     }
     return $listado;

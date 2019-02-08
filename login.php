@@ -35,6 +35,11 @@ if (isset($_POST['enviar'])) {
     if (isset($error)) {
         $plantilla->assign('error', $error);
     }
+    if ($_POST ['desconectar']) {
+        session_destroy();
+        $error = "Te has desconectado";
+        $plantilla->assign('error', $error);
+    }
     $plantilla->assign('error', $error);
     $plantilla->display("login.tpl");
 }
