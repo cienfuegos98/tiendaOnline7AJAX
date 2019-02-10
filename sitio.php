@@ -12,6 +12,7 @@ $plantilla = new Smarty();
 $plantilla->template_dir = "./template";
 $plantilla->compile_dir = "./template_c";
 
+$cesta = new Cesta();
 
 if (isset($_SESSION['usuario']) && isset($_SESSION['pass'])) {
     $nombre = $_SESSION['usuario'];
@@ -20,13 +21,23 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['pass'])) {
     $error = "Debes conectarte para entrar";
     header("Location:login.php?error=$error");
 }
-if (isset($_POST['desconectar'])) {
-
-    $error = "Te has desconectado";
-    header("Location:login.php?error=$error");
-}
 
 $listado = obtenerListado($con);
+
+if ($_POST['accion']) {
+    $codigo = $_POST['cod'];
+    $precio = $_POST['precio'];
+    switch ($_POST['accion']) {
+        case "Añadir":
+//            $cesta = Cesta::generaCesta();
+            $cesta->nuevoProd($precio, $codigo);
+            break;
+
+        default:
+            break;
+    }
+}
+
 $plantilla->assign('listado', $listado);
 $plantilla->display("sitio.tpl");
 
@@ -36,8 +47,11 @@ function obtenerListado($con) {
     foreach ($datos as $dato) {
         $n_corto = $dato['nombre_corto'];
         $precio = $dato['PVP'];
+        $cod = $dato['cod'];
         $listado .= "<form action='sitio.php' method='post'>"
-                . " <input type='submit' value'Añadir' name='datos'>"
+                . " <input type='submit' value='Añadir' name='accion'>"
+                . " <input type='hidden' value='$precio' name='precio'>"
+                . " <input type='hidden' value='$cod' name='cod'>"
                 . "  " . $n_corto . " - " . $precio
                 . "</form>";
     }

@@ -1,4 +1,27 @@
-<html>
+<?php
+/* Smarty version 3.1.33, created on 2019-02-09 11:53:02
+  from 'C:\xampp\htdocs\tiendaOnline4\template\sitio.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_5c5eb10e2094b6_85890366',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'a468e6ee38cece910c4e88c7ccd54669ef1425cd' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\tiendaOnline4\\template\\sitio.tpl',
+      1 => 1549672928,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5c5eb10e2094b6_85890366 (Smarty_Internal_Template $_smarty_tpl) {
+?><html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <title>Listado de Productos con Plantillas</title>
@@ -23,7 +46,8 @@
                 <h1>Listado de productos</h1>
             </div>
             <div id="productos">
-                {$listado}
+                <?php echo $_smarty_tpl->tpl_vars['listado']->value;?>
+
             </div>
              <div id="pie">
                 <form action="login.php" method="post">
@@ -32,4 +56,5 @@
             </div>
         </div>
     </body>
-</html>
+</html><?php }
+}
