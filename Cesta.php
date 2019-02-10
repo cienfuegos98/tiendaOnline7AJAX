@@ -14,10 +14,18 @@ class Cesta {
 
     public function mostrarCesta() {
         $listado = "";
-        $cantidad = 0;
-        foreach ($this->producto as $codigo => $valores) {
-            $listado .= "$valores[0] - $valores[1]";
+        if ($this->productos == 0 || $this->productos == null) {
+            $listado .= "NO HAY PRODUCTOS";
+        } else {
+            foreach ($this->productos as $codigo => $prods) {
+                $listado .= "<p>"
+                        . "<span class='cantidad'>" . $prods[0] . "</span>"
+                        . "<span class='codigo'>" . $codigo . "</span>"
+                        . "<span class='precio'>" . $prods[1] . "</span>"
+                        . "</p>";
+            }
         }
+
         return $listado;
     }
 
@@ -28,6 +36,17 @@ class Cesta {
             $this->productos[$codigo][0] = 1;
             $this->productos[$codigo][1] = $precio;
         }
+    }
+
+    public function guardaCesta() {
+        return $_SESSION['cesta'] = $this;
+    }
+
+    public function calcularTotal() {
+        foreach ($this->productos as $prods) {
+            $total += $prods[0] * $prods[1];
+        }
+        return "<span class='coste'>  Total: $total</span> ";
     }
 
 }

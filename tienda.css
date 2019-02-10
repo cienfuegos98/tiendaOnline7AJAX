@@ -132,20 +132,47 @@
   font-size: 10px;
 } 
 
+
+cantidad {
+    width : 20%;
+    float:left;
+    font-size: 12px;
+}
+
+codigo{
+    width : 40%;
+    float:left;
+    font-size: 12px;
+}
+ 
+precio{
+    float:right;
+    font-size: 12px;
+}
+
+
 #productos .codigo {
   width: 20%;
   float: left;
+  font-size: 12px;
+} 
+#productos .cantidad {
+  width: 20%;
+  float: left;
+  font-size: 12px;
 } 
 
 #productos .nombre {
   width: 60%;
   float: left;
+  font-size: 12px;
 } 
 
 #productos .precio {
   width: 20%;
   text-align: right;
   font-weight: bold;
+ font-size: 12px;
 } 
 
 #pie {

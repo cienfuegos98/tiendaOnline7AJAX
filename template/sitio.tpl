@@ -8,15 +8,11 @@
         <div id="contenedor">
             <div id="cesta">
                 <id class="pagcesta">
-                    <h3><img src="" alt="Cesta" width="24" height="21"> Cesta</h3>
+                    <h3><img src="carrito64.png" alt="Cesta" width="24" height="21"> Cesta</h3>
                     <hr>
-                    <p></p>
+                     {$addProducto}
                     <hr>
-                    <form action="productos.php" method="post">
-                        <input class="cestaAccion" type="submit" name="cestaAccion" value="pagar">
-                        <input class="cestaAccion" type="submit" name="cestaAccion" value="vaciar">
-                    </form>
-                    <hr>
+                    {$total}
                 </id>
             </div>
             <div id="encabezado">

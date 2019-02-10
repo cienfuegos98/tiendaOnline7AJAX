@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-02-09 11:53:02
+/* Smarty version 3.1.33, created on 2019-02-11 00:02:24
   from 'C:\xampp\htdocs\tiendaOnline4\template\sitio.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5c5eb10e2094b6_85890366',
+  'unifunc' => 'content_5c60ad806b7056_07809685',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a468e6ee38cece910c4e88c7ccd54669ef1425cd' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tiendaOnline4\\template\\sitio.tpl',
-      1 => 1549672928,
+      1 => 1549839727,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5c5eb10e2094b6_85890366 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c60ad806b7056_07809685 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -31,15 +31,13 @@ function content_5c5eb10e2094b6_85890366 (Smarty_Internal_Template $_smarty_tpl)
         <div id="contenedor">
             <div id="cesta">
                 <id class="pagcesta">
-                    <h3><img src="" alt="Cesta" width="24" height="21"> Cesta</h3>
+                    <h3><img src="carrito64.png" alt="Cesta" width="24" height="21"> Cesta</h3>
                     <hr>
-                    <p></p>
+                     <?php echo $_smarty_tpl->tpl_vars['addProducto']->value;?>
+
                     <hr>
-                    <form action="productos.php" method="post">
-                        <input class="cestaAccion" type="submit" name="cestaAccion" value="pagar">
-                        <input class="cestaAccion" type="submit" name="cestaAccion" value="vaciar">
-                    </form>
-                    <hr>
+                    <?php echo $_smarty_tpl->tpl_vars['total']->value;?>
+
                 </id>
             </div>
             <div id="encabezado">

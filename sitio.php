@@ -1,5 +1,6 @@
 <?php
 
+error_reporting(0);
 require_once "Smarty.class.php";
 
 spl_autoload_register(function($nombre_clase) {
@@ -23,16 +24,22 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['pass'])) {
 }
 
 $listado = obtenerListado($con);
-
+$cesta = Cesta::generaCesta();
+$addProducto = $cesta->mostrarCesta();
+$plantilla->assign('addProducto', $addProducto);
 if ($_POST['accion']) {
     $codigo = $_POST['cod'];
     $precio = $_POST['precio'];
+
     switch ($_POST['accion']) {
         case "Añadir":
-//            $cesta = Cesta::generaCesta();
             $cesta->nuevoProd($precio, $codigo);
+            $addProducto = $cesta->mostrarCesta();
+            $plantilla->assign('addProducto', $addProducto);
+            $cesta->guardaCesta();
+            $total = $cesta->calcularTotal();
+            $plantilla->assign('total', $total);
             break;
-
         default:
             break;
     }
