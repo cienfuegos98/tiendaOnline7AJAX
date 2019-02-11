@@ -51,4 +51,8 @@ class Cesta {
         return "<span class='coste'>  Total: $total</span> ";
     }
 
+    public function vaciar() {
+        unset($this->productos);
+    }
+
 }

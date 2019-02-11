@@ -30,7 +30,6 @@ $plantilla->assign('addProducto', $addProducto);
 if ($_POST['accion']) {
     $codigo = $_POST['cod'];
     $precio = $_POST['precio'];
-
     switch ($_POST['accion']) {
         case "Añadir":
             $cesta->nuevoProd($precio, $codigo);
@@ -39,6 +38,14 @@ if ($_POST['accion']) {
             $cesta->guardaCesta();
             $total = $cesta->calcularTotal();
             $plantilla->assign('total', $total);
+            break;
+        case "Vaciar":
+            $cesta->vaciar();
+            $cesta->guardaCesta();
+            $cesta->mostrarCesta();
+            break;
+        case "Pagar":
+
             break;
         default:
             break;
