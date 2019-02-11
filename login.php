@@ -1,5 +1,6 @@
 <?php
 
+error_reporting(0);
 require_once "Smarty.class.php";
 
 spl_autoload_register(function($nombre_clase) {

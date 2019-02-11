@@ -45,7 +45,7 @@ if ($_POST['accion']) {
             $cesta->mostrarCesta();
             break;
         case "Pagar":
-
+            header("Location:pagar.php");
             break;
         default:
             break;

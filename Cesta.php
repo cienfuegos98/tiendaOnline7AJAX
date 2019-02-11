@@ -15,16 +15,16 @@ class Cesta {
     public function mostrarCesta() {
         $listado = "";
         if ($this->productos == 0 || $this->productos == null) {
-            $listado .= "NO HAY PRODUCTOS";
+            $listado .= "<p class='cestaVacia'>0 PRODUCTOS</p>";
         } else {
             foreach ($this->productos as $codigo => $prods) {
                 $listado .= "<p>"
                         . "<span class='cantidad'>" . $prods[0] . "</span>"
                         . "<span class='codigo'>" . $codigo . "</span>"
-                        . "<span class='precio'>" . $prods[1] . "</span><br/>"
+                        . "<input class='borrar' type='image' name='borrar' src='estilos/vaciarUno.png'>"
+                        . "<span class='precio'>" . $prods[1] . "</span>"
                         . "</p>";
             }
-
             $listado .= "<hr/>" . $this->calcularTotal();
         }
 

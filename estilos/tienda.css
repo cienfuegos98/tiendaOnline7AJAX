@@ -1,5 +1,4 @@
 .error {
-  font-family: Verdana, Arial, sans-serif; 
   font-size: 0.7em;
   color: #900;
   background-color : #ffff00;
@@ -11,7 +10,9 @@
   font-size: 1px;
   line-height: 0px;
 }
-
+body{
+    font-family: Roboto; 
+}
 #login fieldset {
   position: absolute;
   left: 50%;
@@ -26,7 +27,6 @@
 }
 
 #login legend {
-  font-family : Arial, sans-serif;
   font-size: 1.3em;
   font-weight:bold;
   color:#333;
@@ -38,14 +38,12 @@
 }
 
 #login label {
-  font-family : Arial, sans-serif;
   font-size:0.8em;
   font-weight: bold;
 }
 
 
 #login input[type="text"], #login input[type="password"] {
-  font-family : Arial, Verdana, sans-serif;
   font-size: 0.8em;
   line-height:140%;
   color : #000; 
@@ -62,7 +60,6 @@
 }
 
 .pagproductos body, .pagcesta body  {
-  font: 100% Verdana, Arial, Helvetica, sans-serif;
   background: #666;
   margin: 0;
   padding: 0;
@@ -74,31 +71,32 @@
   width: 90%;
   background: #fff;
   margin: 0 auto;
-  border: 1px solid #000;
+  border:  5px solid black;
   text-align: left;
 } 
 
 #encabezado {
   padding: 0 10px;
-  border-top-width: thin;
-  border-right-width: thin;
-  border-bottom-width: thin;
-  border-left-width: thin;
-  border-top-style: solid;
-  border-right-style: solid;
-  border-bottom-style: solid;
-  border-left-style: solid;
-  background-color: #9cf;
+  margin-bottom: 20px;
+  color: #d30000;
+  border-bottom: 5px solid black;
 } 
 
 #encabezado h1 {
   margin: 0; 
   padding: 10px 0; 
 }
+
+.carrito{
+    width: 40px;
+    height: 40px;  
+}
+
 .pagproductos #cesta {
   float: right;
-  width: 12em;
-  background-color: #588;
+  width: 25%;
+  background-color: #fff;
+  border: 13px solid #474343;
 }
 .pagproductos #cesta h3 {
   margin-left: 10px;
@@ -107,7 +105,6 @@
 .pagproductos #cesta p {
   margin-left: 10px;
   margin-right: 10px;
-  font-size: 10px;
 }
 
 .pagproductos #cesta input[type="submit"] {
@@ -120,7 +117,7 @@
 }
 
 .pagproductos #productos {
-  margin: 0 10em 0 10px;
+  margin: 0.5em 10em 0 0.5em;
 } 
 
 .pagcesta #productos {
@@ -128,30 +125,31 @@
   font-size: 12px;
 } 
 
-.pagproductos #productos input, .pagproductos #productos p {
-  font-size: 10px;
-} 
+#cesta p{
+    padding-bottom: 15px;
+}
 
+.cestaVacia{
+    margin-left: 30px;
+    font-size: 15px;
+}
 
 .cantidad {
     width : 20%;
     float:left;
-    font-size: 12px
+    font-size: 15px
 }
 
 .codigo{
     width : 40%;
     float:left;
-    font-size: 12px
+    font-size: 15px
 }
  
 .precio{
-    
     float:right;
-    font-size: 12px
+    font-size: 15px
 }
-
-
 #productos .codigo {
   width: 20%;
   float: left;
@@ -173,35 +171,45 @@
   width: 20%;
   text-align: right;
   font-weight: bold;
- font-size: 12px;
+  font-size: 12px;
 } 
 
 #pie {
-  padding: 0 10px;
-  background-color: #99ccff;
-  border-top-width: thin;
-  border-right-width: thin;
-  border-bottom-width: thin;
-  border-left-width: thin;
-  border-top-style: solid;
-  border-right-style: solid;
-  border-bottom-style: solid;
-  border-left-style: solid;
+  margin-top: -20px;
+  padding: 5px 5px 5px 5px;
+  background-color: #dddddd;
+  border-top:  5px solid black; 
 } 
 
+#pie input{
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.cestaAccion1 {
+ width: 100px;
+  height: 55px;
+  padding: 55px 0 0;
+  border: 0;
+  background: transparent url(pagar.png) no-repeat center top;
+}
+
+.cestaAccion2 {
+  width: 100px;
+  height: 55px;
+  padding: 55px 0 0;
+  border: 0;
+  background: transparent url(vaciarTodo.png) no-repeat center top;
+}
+
 .borrar{
-    background-image: url(del.png);
-    width: 20px;
-    height: 20px ;
+    width: 30px;
+    height: 30px;
+    float:right;
+    margin-left: 20px;
+    margin-top: -10px;
 }
-.cestaAccion {
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 3px;
-    width:100px;
-    height:30px;
-    padding-left:0px;
-}
+
 table.pago {
     width: 100%;
     align-content: center
