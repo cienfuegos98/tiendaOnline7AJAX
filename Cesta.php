@@ -21,9 +21,11 @@ class Cesta {
                 $listado .= "<p>"
                         . "<span class='cantidad'>" . $prods[0] . "</span>"
                         . "<span class='codigo'>" . $codigo . "</span>"
-                        . "<span class='precio'>" . $prods[1] . "</span>"
+                        . "<span class='precio'>" . $prods[1] . "</span><br/>"
                         . "</p>";
             }
+
+            $listado .= "<hr/>" . $this->calcularTotal();
         }
 
         return $listado;

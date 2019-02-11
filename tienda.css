@@ -133,21 +133,22 @@
 } 
 
 
-cantidad {
+.cantidad {
     width : 20%;
     float:left;
-    font-size: 12px;
+    font-size: 12px
 }
 
-codigo{
+.codigo{
     width : 40%;
     float:left;
-    font-size: 12px;
+    font-size: 12px
 }
  
-precio{
+.precio{
+    
     float:right;
-    font-size: 12px;
+    font-size: 12px
 }
 
 
