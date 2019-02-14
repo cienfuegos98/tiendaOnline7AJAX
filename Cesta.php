@@ -21,7 +21,10 @@ class Cesta {
                 $listado .= "<p>"
                         . "<span class='cantidad'>" . $prods[0] . "</span>"
                         . "<span class='codigo'>" . $codigo . "</span>"
-                        . "<input class='borrar' type='image' name='borrar' src='estilos/vaciarUno.png'>"
+                        . "<form action='sitio.php' method='post'>"
+                        . "<input type='hidden' name='cod' value='$codigo'>"
+                        . "<input class='borrar' type='submit' name='accion' src='estilos/vaciarUno.png' value='Borrar'>"
+                        . "</form>"
                         . "<span class='precio'>" . $prods[1] . "</span>"
                         . "</p>";
             }
@@ -53,6 +56,10 @@ class Cesta {
 
     public function vaciar() {
         unset($this->productos);
+    }
+
+    public function eliminoProducto($codigo) {
+        unset($this->productos[$codigo]);
     }
 
 }

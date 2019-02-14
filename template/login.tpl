@@ -2,7 +2,7 @@
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <title>Ejemplo Tema 5: Login Tienda Web con Plantillas</title>
-        <link href="tienda.css" rel="stylesheet" type="text/css">
+        <link href="estilos/tienda.css" rel="stylesheet" type="text/css">
     </head>
 
     <body>

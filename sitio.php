@@ -13,8 +13,6 @@ $plantilla = new Smarty();
 $plantilla->template_dir = "./template";
 $plantilla->compile_dir = "./template_c";
 
-$cesta = new Cesta();
-
 if (isset($_SESSION['usuario']) && isset($_SESSION['pass'])) {
     $nombre = $_SESSION['usuario'];
     $pass = $_SESSION['pass'];
@@ -25,6 +23,7 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['pass'])) {
 
 $listado = obtenerListado($con);
 $cesta = Cesta::generaCesta();
+var_dump($cesta);
 $addProducto = $cesta->mostrarCesta();
 $plantilla->assign('addProducto', $addProducto);
 if ($_POST['accion']) {
@@ -38,6 +37,7 @@ if ($_POST['accion']) {
             $cesta->guardaCesta();
             $total = $cesta->calcularTotal();
             $plantilla->assign('total', $total);
+
             break;
         case "Vaciar":
             $cesta->vaciar();
@@ -46,6 +46,11 @@ if ($_POST['accion']) {
             break;
         case "Pagar":
             header("Location:pagar.php");
+            break;
+        case "Borrar":
+            $cesta->eliminoProducto($codigo);
+            $cesta->guardaCesta();
+            $cesta->mostrarCesta();
             break;
         default:
             break;
