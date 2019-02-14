@@ -23,7 +23,7 @@ class Cesta {
                         . "<span class='codigo'>" . $codigo . "</span>"
                         . "<form action='sitio.php' method='post'>"
                         . "<input type='hidden' name='cod' value='$codigo'>"
-                        . "<input class='borrar' type='submit' name='accion' src='estilos/vaciarUno.png' value='Borrar'>"
+                        . " <input class='cestaAccion3' type='submit' src='vaciarUno.png' name='accion' value='Borrar'>"
                         . "</form>"
                         . "<span class='precio'>" . $prods[1] . "</span>"
                         . "</p>";
