@@ -59,6 +59,8 @@ class Cesta {
     }
 
     public function eliminoProducto($codigo) {
+        /* PGM Mejorar solo elimino un elemento, eliminaré el producto completo
+          si hay solo una unidad, si no decontar unidades..... */
         unset($this->productos[$codigo]);
     }
 

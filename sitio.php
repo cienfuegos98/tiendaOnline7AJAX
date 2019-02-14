@@ -33,7 +33,7 @@ if ($_POST['accion']) {
         case "Añadir":
             $cesta->nuevoProd($precio, $codigo);
             $addProducto = $cesta->mostrarCesta();
-            $plantilla->assign('addProducto', $addProducto);
+
             $cesta->guardaCesta();
             $total = $cesta->calcularTotal();
             $plantilla->assign('total', $total);
@@ -42,21 +42,22 @@ if ($_POST['accion']) {
         case "Vaciar":
             $cesta->vaciar();
             $cesta->guardaCesta();
-            $cesta->mostrarCesta();
+            $addProducto = $cesta->mostrarCesta();
             break;
         case "Pagar":
             header("Location:pagar.php");
             break;
         case "Borrar":
+
             $cesta->eliminoProducto($codigo);
             $cesta->guardaCesta();
-            $cesta->mostrarCesta();
+            $addProducto = $cesta->mostrarCesta();
             break;
         default:
             break;
     }
 }
-
+$plantilla->assign('addProducto', $addProducto);
 $plantilla->assign('listado', $listado);
 $plantilla->display("sitio.tpl");
 
