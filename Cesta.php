@@ -18,17 +18,17 @@ class Cesta {
             $listado .= "<p class='cestaVacia'>0 PRODUCTOS</p>";
         } else {
             foreach ($this->productos as $codigo => $prods) {
-                $listado .= "<p>"
+                $listado .= "<form action='sitio.php' method='post'>"
+                        . "<p>"
                         . "<span class='cantidad'>" . $prods[0] . "</span>"
                         . "<span class='codigo'>" . $codigo . "</span>"
-                        . "<form action='sitio.php' method='post'>"
-                        . "<input type='hidden' name='cod' value='$codigo'>"
-                        . " <input class='cestaAccion3' type='submit' src='vaciarUno.png' name='accion' value='Borrar'>"
-                        . "</form>"
                         . "<span class='precio'>" . $prods[1] . "</span>"
-                        . "</p>";
+                        . "<input class='cestaAccion3' type='submit' name='accion' value='Borrar'>"
+                        . "<input type='hidden' name='cod' value='$codigo'>"
+                        . "</p>"
+                        . "</form>";
             }
-            $listado .= "<hr/>" . $this->calcularTotal();
+            $listado .= "<br><hr/>" . $this->calcularTotal();
         }
 
         return $listado;
@@ -59,9 +59,11 @@ class Cesta {
     }
 
     public function eliminoProducto($codigo) {
-        /* PGM Mejorar solo elimino un elemento, eliminaré el producto completo
-          si hay solo una unidad, si no decontar unidades..... */
-        unset($this->productos[$codigo]);
+        if ($this->productos[$codigo][0] > 1) {
+            $this->productos[$codigo][0] --;
+        } else {
+            unset($this->productos[$codigo]);
+        }
     }
 
 }
