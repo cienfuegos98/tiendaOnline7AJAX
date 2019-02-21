@@ -6,7 +6,9 @@
     </head>
     <body class="pagproductos">
         <div id="contenedor">
-            
+            <div id="encabezado">
+                <h1>Listado de Productos</h1>
+            </div>
                 <div id=""contenedor>
                     <div id="cesta">
                         <div class="pagcesta">
@@ -21,9 +23,7 @@
                         </div>
                     </div>
                 </div>
-                             <div id="encabezado">
-                <h1>Listado de Productos</h1>
-            </div>
+            
                         <div id=""contenedor>
                 <div id="productos">
                     {$listado}

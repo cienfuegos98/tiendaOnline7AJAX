@@ -94,9 +94,10 @@ body{
 
 .pagproductos #cesta {
   float: right;
-  width: 25%;
+  width: 35%;
   background-color: #fff;
   border: 13px solid #474343;
+  min-width: 300px;
 }
 .pagproductos #cesta h3 {
   margin-left: 10px;
@@ -107,13 +108,10 @@ body{
   margin-right: 10px;
 }
 
-.pagproductos #cesta input[type="submit"] {
-  margin-left: 10px;
-  margin-right: 10px;
+.pagproductos #cesta .cestaAccion3 {
   margin-bottom: 3px;
-  width:100px;
+  margin-top: -5px;
   height:30px;
-  padding-left:0px;
 }
 
 .pagproductos #productos {
@@ -147,7 +145,7 @@ body{
 }
  
 .precio{
-    float:right;
+    float:left;
     font-size: 15px
 }
 #productos .codigo {
@@ -186,35 +184,45 @@ body{
     margin-left: 15px;
 }
 
+.listado{
+    margin-top: -25px;
+}
+
+.accion {
+    float: left;
+    margin-top: -20px;
+  height: 55px;
+  padding: 55px 0px 0px;
+  border: 0;
+  background: transparent url(añadir.png) no-repeat center ;
+}
 .cestaAccion1 {
  width: 100px;
   height: 55px;
-  padding: 55px 0 0;
+  padding: 55px 0 0 ;
   border: 0;
+  margin-left: 15%;
+  margin-top: 10px;
   background: transparent url(pagar.png) no-repeat center top;
 }
 
 .cestaAccion2 {
   width: 100px;
   height: 55px;
-  padding: 55px 0 0;
+  padding: 55px 0 0 ;
   border: 0;
   background: transparent url(vaciarTodo.png) no-repeat center top;
 }
 
 .cestaAccion3 {
-  padding: 55px 0 0;
+  float:right;
+  padding: 28px 0 0;
+  width: 15%;
   border: 0;
   background: transparent url(vaciaruno.png) no-repeat center;
+  margin-bottom: 20px;
 }
 
-.borrar{
-    width: 30px;
-    height: 30px;
-    float:right;
-    margin-left: 20px;
-    margin-top: -10px;
-}
 
 table.pago {
     width: 100%;
@@ -234,4 +242,7 @@ tr.pago:nth-child(even){background-color: #ccc}
 th.pago {
     background-color: #4CAF50;
     color: white;
+}
+input:focus {
+      outline: none;
 }

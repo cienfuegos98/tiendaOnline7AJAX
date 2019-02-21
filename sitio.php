@@ -23,7 +23,6 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['pass'])) {
 
 $listado = obtenerListado($con);
 $cesta = Cesta::generaCesta();
-var_dump($cesta);
 $addProducto = $cesta->mostrarCesta();
 $plantilla->assign('addProducto', $addProducto);
 if ($_POST['accion']) {
@@ -32,31 +31,22 @@ if ($_POST['accion']) {
     switch ($_POST['accion']) {
         case "Añadir":
             $cesta->nuevoProd($precio, $codigo);
-            $addProducto = $cesta->mostrarCesta();
-
-            $cesta->guardaCesta();
-            $total = $cesta->calcularTotal();
-            $plantilla->assign('total', $total);
-
             break;
         case "Vaciar":
             $cesta->vaciar();
-            $cesta->guardaCesta();
-            $addProducto = $cesta->mostrarCesta();
             break;
         case "Pagar":
             header("Location:pagar.php");
             break;
         case "Borrar":
-
             $cesta->eliminoProducto($codigo);
-            $cesta->guardaCesta();
-            $addProducto = $cesta->mostrarCesta();
             break;
         default:
             break;
     }
 }
+$cesta->guardaCesta();
+$addProducto = $cesta->mostrarCesta();
 $plantilla->assign('addProducto', $addProducto);
 $plantilla->assign('listado', $listado);
 $plantilla->display("sitio.tpl");
@@ -69,10 +59,10 @@ function obtenerListado($con) {
         $precio = $dato['PVP'];
         $cod = $dato['cod'];
         $listado .= "<form action='sitio.php' method='post'>"
-                . " <input type='submit' value='Añadir' name='accion'>"
+                . " <input class='accion' type='submit' value='Añadir' name='accion'>"
                 . " <input type='hidden' value='$precio' name='precio'>"
                 . " <input type='hidden' value='$cod' name='cod'>"
-                . "  " . $n_corto . " - " . $precio
+                . $n_corto . " - " . $precio
                 . "</form>";
     }
     return $listado;
