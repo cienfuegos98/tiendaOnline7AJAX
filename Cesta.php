@@ -4,6 +4,10 @@ class Cesta {
 
     private $productos = [];
 
+    function getProductos() {
+        return $this->productos;
+    }
+
     public static function generaCesta() {
         if (isset($_SESSION['cesta'])) {
             return $_SESSION['cesta'];
@@ -28,7 +32,8 @@ class Cesta {
                         . "</p>"
                         . "</form>";
             }
-            $listado .= "<br><hr/>" . $this->calcularTotal();
+
+            $listado .= "<br><hr/><span class='coste'>  Total:" . $this->calcularTotal() . "</span> ";
         }
 
         return $listado;
@@ -51,7 +56,7 @@ class Cesta {
         foreach ($this->productos as $prods) {
             $total += $prods[0] * $prods[1];
         }
-        return "<span class='coste'>  Total: $total</span> ";
+        return $total;
     }
 
     public function vaciar() {
