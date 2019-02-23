@@ -32,10 +32,8 @@ class Cesta {
                         . "</p>"
                         . "</form>";
             }
-
             $listado .= "<br><hr/><span class='coste'>  Total:" . $this->calcularTotal() . "</span> ";
         }
-
         return $listado;
     }
 

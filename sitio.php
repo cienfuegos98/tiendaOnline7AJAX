@@ -20,6 +20,8 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['pass'])) {
     $error = "Debes conectarte para entrar";
     header("Location:login.php?error=$error");
 }
+$disabled = "";
+
 
 $listado = obtenerListado($con);
 $cesta = Cesta::generaCesta();
@@ -45,6 +47,12 @@ if ($_POST['accion']) {
             break;
     }
 }
+if (is_null($cesta->getProductos()) || empty($cesta->getProductos())) {
+    $disabled = "disabled";
+    $plantilla->assign('disabled', $disabled);
+} else {
+    $disabled = "";
+}
 $cesta->guardaCesta();
 $addProducto = $cesta->mostrarCesta();
 $plantilla->assign('addProducto', $addProducto);
@@ -58,12 +66,18 @@ function obtenerListado($con) {
         $n_corto = $dato['nombre_corto'];
         $precio = $dato['PVP'];
         $cod = $dato['cod'];
+        $familia = $dato['familia'];
         $listado .= "<form action='sitio.php' method='post'>"
                 . " <input class='accion' type='submit' value='Añadir' name='accion'>"
                 . " <input type='hidden' value='$precio' name='precio'>"
-                . " <input type='hidden' value='$cod' name='cod'>"
-                . $n_corto . " - " . $precio
-                . "</form>";
+                . " <input type='hidden' value='$cod' name='cod'>";
+        if ($familia == "ORDENA") {
+            $listado .= "<a href='descripcion.php'>" . $n_corto . " - " . "$precio</a>"
+                    . "</form>";
+        } else {
+            $listado .= $n_corto . " - " . $precio
+                    . "</form>";
+        }
     }
     return $listado;
 }

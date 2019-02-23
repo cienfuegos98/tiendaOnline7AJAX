@@ -14,14 +14,15 @@
             <hr />
             <br class="divisor" />
             <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
-                <input name="cmd" type="hidden" value="_xclick" />
+                <input name="cmd" type="hidden" value="_cart" />
                 <input name="upload" type="hidden" value="1" />
-                <input name="business" type="hidden" value="manuelromeromiguel-facilitator@gmail.com" />
-                <input name="shopping_url" type="hidden" value="http://manuel.infenlaces.com/dwes/TiendaPagar/pagar.php" />
+                <input name="business" type="hidden" value="pgmcastillo98-facilitator@gmail.com" />
+                <input name="shopping_url" type="hidden" value="http://localhost/tiendaOnline6/pagar.php" />
                 <input name="currency_code" type="hidden" value="EUR" />
-                <input name="return" type="hidden" value="http://manuel.infenlaces.com/dwes/TiendaPagar/pago_realizado.php" />
-                <input name="notify_url" type="hidden" value="http://manuel.infenlaces.com/dwes/TiendaPagar/paypal_ipn.php" />
+                <input name="return" type="hidden" value="http://localhost/tiendaOnline6/pagar.php" />
+                <input name="notify_url" type="hidden" value="http://localhost/tiendaOnline6/pagar.php" />
                 <input name="rm" type="hidden" value="2" />
+
                 <div class="pago">
                     <table id="tablaPagar" class="pago">
                         <thead>
@@ -58,26 +59,25 @@
                         </tr>
                     </table>
                 </div>
-
-
-
-                <input type="hidden" name="item_name" value="Compra de dwes">
-                <input type="hidden" name="amount" value="0">
-             
-            </form>
-           
-
-            <div id="pie">
-                <form action='login.php' method='post'>
-                    <input type='submit' name='desconectar' value='Desconectar usuario'/>
+                        {$hiddenPay}
+                        <br>
+                        
+              
+                  COMPRA ESTO
+                  <br><input type="image" src="http://www.paypal.com/es_ES/i/btn/x-click-but01.gif" border="0" name="submit" alt="Realice pagos con PayPal: es rápido, gratis y seguro">
+             </form>
+                <form action="login.php">
+                    <input type='submit' name='desconectar' value='Desconectar usuario'/>        
                 </form>
-
-            </div>
-
-        </div>
-    </div>
-</body>
+                <form action="xPdf.php" method="POST">
+                    <input type='submit' name='imprimir' value='Imprimir'/>
+                </form>
+                <form action="sitio.php" method="POST">
+                    <input type='submit' name='atras' value='Atras'/>
+                </form>
+               
+          
+        
+    </body>
 </html>
-
-
 
