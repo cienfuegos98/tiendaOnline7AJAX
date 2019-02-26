@@ -10,12 +10,13 @@ class BD {
     private $pass;
     private $bd;
 
+    //Devuelve un error
     function getError() {
         return $this->error;
     }
 
 //Creamos el constructor con los atributos de la base de datos
-    public function __construct($host = "localhost", $user = "root", $pass = "root", $bd = "dwes") {
+    public function __construct($host = "172.17.0.2", $user = "root", $pass = "root", $bd = "dwes") {
         $this->host = $host;
         $this->user = $user;
         $this->pass = $pass;
@@ -23,6 +24,7 @@ class BD {
         $this->con = $this->conexion();
     }
 
+    //Crea a conexion.
     private function conexion() {
         try {
             $con = new PDO("mysql:host=$this->host;dbname=$this->bd", $this->user, $this->pass);
@@ -33,15 +35,19 @@ class BD {
         }
     }
 
+    //cierra la conexion.
     public function cerrar() {//cerramos la conexion con la bbdd
         $this->con = null;
     }
 
+    //hace una consulta
     public function consulta($c) {
         return $this->con->query($c);
     }
 
+    //Devuelve un array asociativo con el titulo de la columna como index y como valor la tupla.
     public function selection($c) {
+
         $filas = [];
         if ($this->con == null) {
             $this->con = $this->conexion();
@@ -50,9 +56,11 @@ class BD {
         while ($fila = $resultado->fetch(PDO::FETCH_ASSOC)) {
             $filas[] = $fila;
         }
+
         return $filas;
     }
 
+    //Devuelve el nombre de la comlumna.
     public function nombres_campos($nombre_tabla): array {
         $campos = [];
         $consulta = "select * from $nombre_tabla";
@@ -64,6 +72,7 @@ class BD {
         return $campos;
     }
 
+    //ejecuta una sentencia
     public function run($c) {
         try {
             $stmt = $this->con->prepare($c);
@@ -73,6 +82,7 @@ class BD {
         }
     }
 
+    //Funcion que comprueba si el usuario es valido o no
     public function compruebaUsuario($nombre, $pass) {
         $datos = $this->selection("SELECT * FROM usuario");
         foreach ($datos as $dato) {

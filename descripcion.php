@@ -9,6 +9,7 @@ spl_autoload_register(function($nombre_clase) {
 $con = new BD();
 session_start();
 
+//Cuompruebo que no se conecta por url.
 if (isset($_SESSION['usuario']) && isset($_SESSION['pass'])) {
     $nombre = $_SESSION['usuario'];
     $pass = $_SESSION['pass'];
@@ -22,7 +23,10 @@ $plantilla = new Smarty();
 $plantilla->template_dir = "./template";
 $plantilla->compile_dir = "./template_c";
 
-$dato = $con->selection("SELECT*FROM ordenador");
+
+//Selecciono de la base de datos todos los valores de la tabla ordenador.
+$dato = $con->selection("SELECT * FROM ordenador");
+
 foreach ($dato as $datos) {
     $cod = $datos['cod'];
     $procesador = $datos['procesador'];
@@ -34,6 +38,7 @@ foreach ($dato as $datos) {
     $otros = $datos['otros'];
 }
 
+//Selecciono de la base de datos todos los valores de la tabla producto.
 $value = $con->selection("SELECT*FROM producto");
 foreach ($value as $values) {
     $desc = $values['descripcion'];
@@ -41,7 +46,7 @@ foreach ($value as $values) {
     $nombre = $values['nombre_corto'];
 }
 
-
+//Recojo todos los valores necesarios en variables y despues los assigno en la plantilla.
 $plantilla->assign('cod', $cod);
 $plantilla->assign('otros', $otros);
 $plantilla->assign('procesador', $procesador);

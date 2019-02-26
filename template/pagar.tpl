@@ -17,10 +17,10 @@
                 <input name="cmd" type="hidden" value="_cart" />
                 <input name="upload" type="hidden" value="1" />
                 <input name="business" type="hidden" value="pgmcastillo98-facilitator@gmail.com" />
-                <input name="shopping_url" type="hidden" value="http://localhost/tiendaOnline6/pagar.php" />
+                <input name="shopping_url" type="hidden" value="http://localhost/ZPRACTICAS_PHP_PABLO/tiendaOnline7/pagar.php" />
                 <input name="currency_code" type="hidden" value="EUR" />
-                <input name="return" type="hidden" value="http://localhost/tiendaOnline6/pagar.php" />
-                <input name="notify_url" type="hidden" value="http://localhost/tiendaOnline6/pagar.php" />
+                <input name="return" type="hidden" value="http://localhost/ZPRACTICAS_PHP_PABLO/tiendaOnline7/pagar.php" />
+                <input name="notify_url" type="hidden" value="http://localhost/ZPRACTICAS_PHP_PABLO/tiendaOnline7/pagar.php"" />
                 <input name="rm" type="hidden" value="2" />
 
                 <div class="pago">

@@ -4,10 +4,17 @@
         <title>Listado de Productos con Plantillas</title>
         <link href="estilos/tienda.css" rel="stylesheet" type="text/css">
     </head>
+    <script>
+
+        function cambiar() {
+            JaxonServidorAjax.cambiar();
+            return false;
+        }
+    </script>
     <body class="pagproductos">
         <div id="contenedor">
             <div id="encabezado">
-                <h1>Listado de Productos</h1>
+                <h1>Listado de Productos </h1>
             </div>
                 <div id=""contenedor>
                     <div id="cesta">
@@ -15,6 +22,7 @@
                             <h3><img class="carrito" src="estilos/carrito.png" alt="Cesta" width="24" height="21"> Cesta</h3>
                             <hr/>
                              {$addProducto}
+                             <div id='e1'>  hola </div>
                             <hr />
                             <form action='sitio.php' method ='post'>
                                 <input class='cestaAccion1' type='submit' src='pagar.png' name='accion' value='Pagar' {$disabled}>
@@ -26,15 +34,21 @@
             
                         <div id=""contenedor>
                 <div id="productos">
+                     
                     {$listado}
+                    
                 </div>
+                 
                 </div>
                  <br class="divisor" />
+                 
              <div id="pie">
                 <form action="login.php" method="post">
                     <input type="submit" name="desconectar" value="Desconectar">
+                    
                 </form>        
             </div>
+                 
         </div>
     </body>
 </html>

@@ -18,12 +18,12 @@ class PDF extends FPDF {
     }
 
     function tablaBasica1($header, $arrayProductos) {
-        //Cabecera
+        //Cabecera de la tabla
         foreach ($header as $col) {
             $this->Cell(40, 7, $col, 1);
         }
         $this->Ln();
-
+        //Datos de la tabla
         foreach ($arrayProductos as $cod => $prod) {
             $this->Cell(40, 7, $cod, 1);
             $this->Cell(40, 7, $prod[0], 1);
@@ -34,6 +34,7 @@ class PDF extends FPDF {
     }
 
     function tablaBasica2($header2, $cantidad, $total) {
+        //Datos de toda la tabla con sus títulos.
         $this->Cell(40, 7, $header2[0], 1);
         $this->Cell(40, 7, $cantidad, 1);
         $this->Ln();
